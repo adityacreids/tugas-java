@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author aditbba
  */
-public class tugasScanner {
+public class Tugas_java {
 
     /**
      * @param args the command line arguments
