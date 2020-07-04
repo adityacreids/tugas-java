@@ -3,40 +3,51 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pertemuan4;
+package pertemuan_output_input;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
  * @author aditbba
  */
-public class ExampleScanner {
-    public static void main(String[] args) {
+public class ExampleBufferedReader {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // variable name untuk di inputkan
         String nama, alamat, kuliah;
         int umur, semester;
         double ipk;
-        // object scanner
-        Scanner inputData = new Scanner(System.in);
+        
+        // object inputStream
+        InputStreamReader isr = new InputStreamReader(System.in);
+        
+        //object bufferedReader
+        BufferedReader br = new BufferedReader(isr);
         
         // pertanyaan
         System.out.println("Siapa nama Anda?");
-        nama = inputData.nextLine();
+        nama = br.readLine();
         
         System.out.println("Berapa Umur Anda?");
-        umur = Integer.parseInt(inputData.nextLine());
+        umur = Integer.parseInt(br.readLine());
         
         System.out.println("Anda tinggal diamana?");
-        alamat = inputData.nextLine();
+        alamat = br.readLine();
         
         System.out.println("Anda sedang kuliah dimana?");
-        kuliah = inputData.nextLine();
+        kuliah = br.readLine();
         
         System.out.println("Semester berapa sekarang?");
-        semester = Integer.parseInt(inputData.nextLine());
+        semester = Integer.parseInt(br.readLine());
         
-        System.out.println("Semester ini berapa IPK anda?");
-        ipk = inputData.nextDouble();
+        System.out.println("Berapa IPK Anda? ");
+        ipk = Double.parseDouble(br.readLine());
         
         // aoutput
         System.out.println("Data Anda sebagai berikut:");
@@ -45,6 +56,6 @@ public class ExampleScanner {
         System.out.println("Tinggal di " + alamat);
         System.out.println("Kuliah di " + kuliah);
         System.out.println("Sudah semester " + semester);
-        System.out.println("IPK anda " + ipk);
     }
+    
 }

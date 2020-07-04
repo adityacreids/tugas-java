@@ -3,51 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pertemuan4;
+package pertemuan_output_input;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  *
  * @author aditbba
  */
-public class ExampleBufferedReader {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws IOException {
-        // variable name untuk di inputkan
+public class ExampleScanner {
+    public static void main(String[] args) {
         String nama, alamat, kuliah;
         int umur, semester;
         double ipk;
-        
-        // object inputStream
-        InputStreamReader isr = new InputStreamReader(System.in);
-        
-        //object bufferedReader
-        BufferedReader br = new BufferedReader(isr);
+        // object scanner
+        Scanner inputData = new Scanner(System.in);
         
         // pertanyaan
         System.out.println("Siapa nama Anda?");
-        nama = br.readLine();
+        nama = inputData.nextLine();
         
         System.out.println("Berapa Umur Anda?");
-        umur = Integer.parseInt(br.readLine());
+        umur = Integer.parseInt(inputData.nextLine());
         
         System.out.println("Anda tinggal diamana?");
-        alamat = br.readLine();
+        alamat = inputData.nextLine();
         
         System.out.println("Anda sedang kuliah dimana?");
-        kuliah = br.readLine();
+        kuliah = inputData.nextLine();
         
         System.out.println("Semester berapa sekarang?");
-        semester = Integer.parseInt(br.readLine());
+        semester = Integer.parseInt(inputData.nextLine());
         
-        System.out.println("Berapa IPK Anda? ");
-        ipk = Double.parseDouble(br.readLine());
+        System.out.println("Semester ini berapa IPK anda?");
+        ipk = inputData.nextDouble();
         
         // aoutput
         System.out.println("Data Anda sebagai berikut:");
@@ -56,6 +45,6 @@ public class ExampleBufferedReader {
         System.out.println("Tinggal di " + alamat);
         System.out.println("Kuliah di " + kuliah);
         System.out.println("Sudah semester " + semester);
+        System.out.println("IPK anda " + ipk);
     }
-    
 }

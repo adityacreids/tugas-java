@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pertemuan_perulangan;
+package pertemuan_percabangan;
 
 import javax.swing.JOptionPane;
 
