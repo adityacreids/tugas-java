@@ -24,13 +24,13 @@ public class tugasArrayMultiDimensi {
         
         System.out.println("");
         
-        System.out.println("Hasil pengurangan matrik A dan B");
+        System.out.println("Hasil pengurangan Matrik A dan B");
         perhitunganMatrik(matrikA, matrikB, "Pengurangan");
         
         
         System.out.println("");
         
-        System.out.println("Hasil penjumlahan matrik A dan B");
+        System.out.println("Hasil penjumlahan Matrik A dan B");
         perhitunganMatrik(matrikA, matrikB, "Penjumlahan");
         
     }
