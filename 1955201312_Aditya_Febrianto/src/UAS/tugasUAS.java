@@ -5,6 +5,8 @@
  */
 package UAS;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author aditbba
@@ -42,9 +44,12 @@ public class tugasUAS extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtTotalMasuk = new javax.swing.JTextField();
-        txtTotalIzin = new javax.swing.JTextField();
+        txtTotalSakit = new javax.swing.JTextField();
         txtTotalCuti = new javax.swing.JTextField();
         btnCekGaji = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtAreaHasil = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +101,7 @@ public class tugasUAS extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +122,7 @@ public class tugasUAS extends javax.swing.JFrame {
 
         jLabel4.setText("Total Masuk");
 
-        jLabel5.setText("Total Izin");
+        jLabel5.setText("Total Sakit");
 
         jLabel6.setText("Total Cuti");
 
@@ -140,7 +145,7 @@ public class tugasUAS extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtTotalMasuk)
-                    .addComponent(txtTotalIzin)
+                    .addComponent(txtTotalSakit)
                     .addComponent(txtTotalCuti, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -154,7 +159,7 @@ public class tugasUAS extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtTotalIzin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTotalSakit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -169,6 +174,29 @@ public class tugasUAS extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Hasil Gaji"));
+
+        txtAreaHasil.setColumns(20);
+        txtAreaHasil.setRows(5);
+        jScrollPane2.setViewportView(txtAreaHasil);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -180,6 +208,9 @@ public class tugasUAS extends javax.swing.JFrame {
                 .addGap(124, 124, 124)
                 .addComponent(btnCekGaji)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,21 +222,52 @@ public class tugasUAS extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCekGaji)
-                .addGap(0, 222, Short.MAX_VALUE))
+                .addGap(4, 4, 4)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 98, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtTotalMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalMasukActionPerformed
-        
+
     }//GEN-LAST:event_txtTotalMasukActionPerformed
 
     private void btnCekGajiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCekGajiActionPerformed
-        String nama     = txtNama.getText();
-        String jabatan  = listJabatan.getSelectedValue();
-        
-        System.out.println(jabatan);
+        String nama = txtNama.getText();
+        String jabatan = listJabatan.getSelectedValue();
+        // array gaji
+        int gaji[][] = {
+            {100000, 70000, 35000},
+            {120000, 80000, 40000},
+            {150000, 100000, 50000}
+        };
+        int totalMasuk = Integer.parseInt(txtTotalMasuk.getText());
+        int totalSakit = Integer.parseInt(txtTotalSakit.getText());
+        int totalCuti = Integer.parseInt(txtTotalCuti.getText());
+        int totalKerja = totalMasuk + totalSakit + totalCuti;
+        String hasilOutput;
+        if (totalKerja > 31) {
+            hasilOutput = "Maaf total kerja yang Anda masukkan melebihi 31 hari.";
+        } else if (totalKerja < 28) {
+            hasilOutput = "Maaf total kerja yang Anda Masukkan kurang dari 28 hari.";
+        } else {
+            int gajiJabatan = 0;
+            if ("Staff Admin".equals(jabatan)) {
+                gajiJabatan = 1;
+            } else if ("Kepala Bagian".equals(jabatan)) {
+                gajiJabatan = 2;
+            }
+            int totalGaji = (totalMasuk * gaji[gajiJabatan][0]) 
+                    + (totalSakit * gaji[gajiJabatan][1]) 
+                    + (totalCuti * gaji[gajiJabatan][2]);
+            NumberFormat formatter = NumberFormat.getCurrencyInstance();
+            String formatGaji = formatter.format(totalGaji);
+            
+            hasilOutput = "Gaji Anda 1 bulan: " + formatGaji;
+        }
+        txtAreaHasil.setText(hasilOutput);
     }//GEN-LAST:event_btnCekGajiActionPerformed
 
     /**
@@ -254,11 +316,14 @@ public class tugasUAS extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listJabatan;
+    private javax.swing.JTextArea txtAreaHasil;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtTotalCuti;
-    private javax.swing.JTextField txtTotalIzin;
     private javax.swing.JTextField txtTotalMasuk;
+    private javax.swing.JTextField txtTotalSakit;
     // End of variables declaration//GEN-END:variables
 }
