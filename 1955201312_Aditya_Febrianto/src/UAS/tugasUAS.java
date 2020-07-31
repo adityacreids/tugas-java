@@ -237,36 +237,48 @@ public class tugasUAS extends javax.swing.JFrame {
     private void btnCekGajiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCekGajiActionPerformed
         String nama = txtNama.getText();
         String jabatan = listJabatan.getSelectedValue();
+        
         // array gaji
         int gaji[][] = {
             {100000, 70000, 35000},
             {120000, 80000, 40000},
             {150000, 100000, 50000}
         };
+        
+        // perhitungan total kerja dari masuk, sakit, dan cuti
         int totalMasuk = Integer.parseInt(txtTotalMasuk.getText());
         int totalSakit = Integer.parseInt(txtTotalSakit.getText());
         int totalCuti = Integer.parseInt(txtTotalCuti.getText());
         int totalKerja = totalMasuk + totalSakit + totalCuti;
+        
+        // pengecekan total kerja, jika lebih 31 / kurang dari 28 hari
         String hasilOutput;
         if (totalKerja > 31) {
             hasilOutput = "Maaf total kerja yang Anda masukkan melebihi 31 hari.";
         } else if (totalKerja < 28) {
             hasilOutput = "Maaf total kerja yang Anda Masukkan kurang dari 28 hari.";
         } else {
+            // penentuan gaji dari array gaji sesuai jabatan
             int gajiJabatan = 0;
             if ("Staff Admin".equals(jabatan)) {
                 gajiJabatan = 1;
             } else if ("Kepala Bagian".equals(jabatan)) {
                 gajiJabatan = 2;
             }
+            
+            // hitung total gaji sesuai total masuk dan jabatan
             int totalGaji = (totalMasuk * gaji[gajiJabatan][0]) 
                     + (totalSakit * gaji[gajiJabatan][1]) 
                     + (totalCuti * gaji[gajiJabatan][2]);
+            
+            // merubah format integer gaji menjadi format mata uang 
             NumberFormat formatter = NumberFormat.getCurrencyInstance();
             String formatGaji = formatter.format(totalGaji);
             
-            hasilOutput = "Gaji Anda 1 bulan: " + formatGaji;
+            hasilOutput = "Gaji " + nama + " 1 bulan: " + formatGaji;
         }
+        
+        // hasil output di tampilkan di text area hasil
         txtAreaHasil.setText(hasilOutput);
     }//GEN-LAST:event_btnCekGajiActionPerformed
 
